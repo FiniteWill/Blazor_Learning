@@ -1,0 +1,5 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication" Path="C:\Users\DuffeyAaron\.nuget\packages\microsoft.aspnetcore.components.webassembly.authentication\5.0.17\build\..\staticwebassets\" />
+</StaticWebAssets>
