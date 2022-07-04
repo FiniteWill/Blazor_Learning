@@ -97,6 +97,69 @@ using Blazor_Learning.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 21 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Index.razor"
+      
+    private bool IS_DEBUGGING = true;
+    private static Version languageVer = new Version("5.0");
+    private List<string> toolTips = new List<string>()
+    {
+        "Use the search bar to find specific terms or keywords.",
+        "This documentation is reflects the " + languageVer.ToString() + " version.",
+        "ToolTips are fun."
+    };
+    private int toolTipIndex = 0;
+    private string currentToolTip = "Welcome to your new app.";
+
+
+    /// <summary>
+    /// Iterates through the given List&lt;T&gt; and assigns the value at 
+    /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="list">List&lt;T&gt; to iterate over.</param>
+    /// <param name="element">Thing being assigned to.</param>
+    /// <param name="iterator">Holds index for iterating.</param>
+    private void IterateAndAssign<T>(List<T> list, ref T element, ref int iterator)
+    {
+        if (list != null)
+        {
+            iterator++;
+            if (iterator > list.Count - 1) { iterator = 0; }
+            element = list[iterator];
+        }
+        else if(IS_DEBUGGING)
+        {
+            Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
+        }
+    }
+
+    /// <summary>
+    /// Iterates through the given T[] and assigns the value at 
+    /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="list">T[] to iterate over.</param>
+    /// <param name="element">Thing being assigned to.</param>
+    /// <param name="iterator">Holds index for iterating.</param>
+    /// 
+    private void IterateAndAssign<T>(T[] list, ref T element, ref int iterator)
+    {
+        if (list != null)
+        {
+            iterator++;
+            if (iterator > list.Length - 1) { iterator = 0; }
+            element = list[iterator];
+        }
+        else if(IS_DEBUGGING)
+        {
+            Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
+        }
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

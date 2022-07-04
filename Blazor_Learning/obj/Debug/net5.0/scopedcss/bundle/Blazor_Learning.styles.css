@@ -1,3 +1,31 @@
+/* /Pages/Documentation.razor.rz.scp.css */
+body[b-c3yapw16fu] {
+}
+
+.darkMode[b-c3yapw16fu]{
+    background-color: #000000;
+    border-color: #dddddd;
+}
+.lightMode[b-c3yapw16fu]{
+    background-color: #dddddd;
+    border-color: #000000;
+}
+.documentationView[b-c3yapw16fu]{
+    font-family: "Lucida Sans";
+    color: #000000
+}
+.documentationList[b-c3yapw16fu]{
+    list-style-type: none;
+}
+/* /Pages/Index.razor.rz.scp.css */
+body[b-lreewtb8mp] {
+}
+
+.tooltipButton[b-lreewtb8mp]{
+    background-color: #b200ff;
+    border-radius: 20px;
+    align-content: center;
+}
 /* /Shared/MainLayout.razor.rz.scp.css */
 .page[b-f89ltawvjq] {
     position: relative;

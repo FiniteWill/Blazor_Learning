@@ -646,3 +646,7 @@ C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Rep
 C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\Blazor_Learning.pdb
 C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\serviceworkers\wwwroot\service-worker.js
 C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\service-worker-assets.js
+C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\scopedcss\Pages\Index.razor.rz.scp.css
+C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\RazorDeclaration\Pages\Documentation.razor.g.cs
+C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\Razor\Pages\Documentation.razor.g.cs
+C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\obj\Debug\net5.0\scopedcss\Pages\Documentation.razor.rz.scp.css
