@@ -90,6 +90,7 @@ using Blazor_Learning.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/{DarkMode:bool}")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,10 +99,13 @@ using Blazor_Learning.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 21 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Index.razor"
-      
+#line 22 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Index.razor"
+       
     private bool IS_DEBUGGING = true;
     private static Version languageVer = new Version("5.0");
+    [Parameter]
+    public bool DarkMode { get; set; }
+
     private List<string> toolTips = new List<string>()
     {
         "Use the search bar to find specific terms or keywords.",

@@ -97,20 +97,47 @@ using Blazor_Learning.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 33 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Shared\NavMenu.razor"
+#line 37 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Shared\NavMenu.razor"
        
+    // List of the base strings for each razor page
+    private string[] uriBases = new string[]
+    {
+        "/",
+        "counter/",
+        "fetchdata/",
+        "documentation/"
+    };
+
     private bool collapseNavMenu = true;
+    private bool darkMode = false;
+    private bool pressed = false;
+    private string temp = "";
+    private string t = "";
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+        temp = UriHelper.Uri;
+        pressed = false;
+    }
+
+    private void ToggleDarkMode()
+    {
+        darkMode = !darkMode;
+
+        string curUri = UriHelper.Uri;
+        foreach(string s in uriBases)
+        {
+            if (curUri.Contains(s)) { UriHelper.NavigateTo(s + darkMode.ToString()); }
+        }
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager UriHelper { get; set; }
     }
 }
 #pragma warning restore 1591

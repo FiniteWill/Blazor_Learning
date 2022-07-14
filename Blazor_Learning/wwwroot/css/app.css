@@ -48,3 +48,14 @@ a, .btn-link {
         right: 0.75rem;
         top: 0.5rem;
     }
+
+    /*USER DEFINED CLASSES (Used across multiple pages in place 
+        of razor.css component files which apply to the corresponding razor page only*/
+    .darkMode{
+        background-color: black;
+        border-color: white;
+    }
+    .lightMode{
+        background-color: white;
+        border-color: black;
+    }

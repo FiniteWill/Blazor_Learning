@@ -2,15 +2,14 @@
 
 /* /Pages/Documentation.razor.rz.scp.css */
 body[b-c3yapw16fu] {
+    background-color: #000000;
 }
 
-.darkMode[b-c3yapw16fu]{
-    background-color: #000000;
-    border-color: #dddddd;
-}
-.lightMode[b-c3yapw16fu]{
-    background-color: #dddddd;
-    border-color: #000000;
+.noPadFlex[b-c3yapw16fu]{
+    align-content: flex-end;
+    padding: 0px;
+    margin: 0px;
+
 }
 .documentationView[b-c3yapw16fu]{
     font-family: "Lucida Sans";

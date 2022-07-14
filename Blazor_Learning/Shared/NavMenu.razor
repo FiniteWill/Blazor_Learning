@@ -1,29 +1,33 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
-    <a class="navbar-brand" href="">Blazor_Learning</a>
+﻿@inject NavigationManager UriHelper
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="/@darkMode">Blazor_Learning</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
 </div>
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <div>
+        <button @onclick="ToggleDarkMode">Dark Mode</button>
+    </div>
     <ul class="nav flex-column">
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+        <li class="nav-item px-3"> 
+            <NavLink class="nav-link" href='@("/"+darkMode)' Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
+            <NavLink class="nav-link" href='@("counter/"+darkMode)'>
                 <span class="oi oi-plus" aria-hidden="true"></span> Counter
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="fetchdata">
+            <NavLink class="nav-link" href='@("fetchdata/"+darkMode)'>
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
             </NavLink>
         </li>
         <li class="nav-item px-3">
-            <NavLink class="nav-link" href="documentation">
+            <NavLink class="nav-link" href='@("documentation/"+darkMode)'>
                 <sapn class="oi oi-list-rich" aria-hidden="true"></sapn> Documentation
             </NavLink>
         </li>
@@ -31,12 +35,38 @@
 </div>
 
 @code {
+    // List of the base strings for each razor page
+    private string[] uriBases = new string[]
+    {
+        "/",
+        "counter/",
+        "fetchdata/",
+        "documentation/"
+    };
+
     private bool collapseNavMenu = true;
+    private bool darkMode = false;
+    private bool pressed = false;
+    private string temp = "";
+    private string t = "";
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+        temp = UriHelper.Uri;
+        pressed = false;
+    }
+
+    private void ToggleDarkMode()
+    {
+        darkMode = !darkMode;
+
+        string curUri = UriHelper.Uri;
+        foreach(string s in uriBases)
+        {
+            if (curUri.Contains(s)) { UriHelper.NavigateTo(s + darkMode.ToString()); }
+        }
     }
 }

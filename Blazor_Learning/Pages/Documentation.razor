@@ -1,22 +1,32 @@
 ﻿@page "/documentation"
-<title>Documentation API</title> 
-<h1>Documentation</h1>
-<div class="@(_darkMode?"darkMode":"lightMode")" >Test</div>
+@page "/documentation/{darkMode:bool}"
 
-<div>
-    <div><p>@_currentDoc</p></div>
-    <div>
-        <ul class="documentationList" style="flex:auto; grid-auto-rows:auto">
-            <li>
-                <button @onclick="() => ChangeTextDisplay(_documentationText[0], ref _currentDoc)">t1</button>
+<body class="@(darkMode?"darkMode":"lightMode")">
+    test dark mode
+</body>
+<div class="darkMode"> test dark mode (manually set to class)</div>
+
+<title>Documentation API</title>
+<h1>Documentation</h1>
+<body class="@(darkMode?"darkMode":"lightMode")">
+</body>
+
+
+<div style="align-items:flex-start">
+    <div><p>@_currentDoc</p><p>test</p></div>
+    <button @onclick="()=>DarkModeToggle()">DARK MODE TOGGLE</button>
+    <div class="noPadFlex" style="display:inline">
+        <ul style="flex:auto; grid-auto-rows:auto">
+            <li class="documentationList" style="margin:0px;flex:auto; align-content:space-between">
+                <button @onclick="() => ChangeDocumentation(_documentationText[0], ref _currentDoc)">t1</button>
                 <p>Primative types</p>
             </li>
-            <li>
-                <button @onclick="() => ChangeTextDisplay(_documentationText[1], ref _currentDoc)">t2</button>
+            <li class="documentationList">
+                <button @onclick="() => ChangeDocumentation(_documentationText[1], ref _currentDoc)">t2</button>
                 <p>Creating functions with the framework</p>
             </li>
-            <li>
-                <button @onclick="() => ChangeTextDisplay(_documentationText[2], ref _currentDoc)">t3</button>
+            <li class="documentationList">
+                <button @onclick="() => ChangeDocumentation(_documentationText[2], ref _currentDoc)">t3</button>
                 <p>Looping and conditionals</p>
             </li>
         </ul>
@@ -24,20 +34,25 @@
 </div>
 
 
-@code {      
-    private bool _darkMode = false;
+@code {
+    [Parameter]
+    public bool darkMode { get; set; }
     private string _currentDoc = "";
     private List<string> _documentationText = new List<string>()
-    {
+{
         "The following documentation ...",
         "Is generated ...",
         "By time "
     };
     private List<ElementReference> _documentationElements = new List<ElementReference>();
+    private Tuple<string, List<ElementReference>> _docElements;
 
-    private void ChangeTextDisplay(string newText, ref string element)
+    private void ChangeDocumentation(string newText, ref string element)
     {
         element = newText;
     }
-
+    private void DarkModeToggle()
+    {
+        darkMode = !darkMode;
+    }
 }

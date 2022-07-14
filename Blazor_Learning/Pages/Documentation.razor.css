@@ -1,13 +1,12 @@
 ﻿body {
+    background-color: #000000;
 }
 
-.darkMode{
-    background-color: #000000;
-    border-color: #dddddd;
-}
-.lightMode{
-    background-color: #dddddd;
-    border-color: #000000;
+.noPadFlex{
+    align-content: flex-end;
+    padding: 0px;
+    margin: 0px;
+
 }
 .documentationView{
     font-family: "Lucida Sans";

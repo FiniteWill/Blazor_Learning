@@ -90,6 +90,7 @@ using Blazor_Learning.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/fetchdata/{darkMode:bool}")]
     public partial class FetchData : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,8 +99,10 @@ using Blazor_Learning.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 37 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\FetchData.razor"
+#line 38 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\FetchData.razor"
        
+    [Parameter]
+    public bool darkMode { get; set; }
     private WeatherForecast[] forecasts;
 
     protected override async Task OnInitializedAsync()

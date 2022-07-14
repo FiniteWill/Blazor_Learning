@@ -90,6 +90,7 @@ using Blazor_Learning.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/counter")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/counter/{DarkMode:bool}")]
     public partial class Counter : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -98,9 +99,12 @@ using Blazor_Learning.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 9 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Counter.razor"
+#line 15 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Counter.razor"
        
     private int currentCount = 0;
+
+    [Parameter]
+    public bool DarkMode { get; set; }
 
     private void IncrementCount()
     {
