@@ -2,6 +2,11 @@
 @page "/fetchdata/{darkMode:bool}"
 @inject HttpClient Http
 
+<body class="@(darkMode?"darkMode":"lightMode")">
+    test dark mode
+</body>
+<div class="@(darkMode?"darkMode":"lightMode")"> test dark mode (manually set to class)</div>
+
 <h1>Weather forecast</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
@@ -12,7 +17,7 @@
 }
 else
 {
-    <table class="table darkMode">
+    <table class="table @(darkMode?"darkMode":"lightMode")">
         <thead>
             <tr>
                 <th>Date</th>

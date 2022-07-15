@@ -1,20 +1,10 @@
 ﻿@page "/documentation"
 @page "/documentation/{darkMode:bool}"
 
-<body class="@(darkMode?"darkMode":"lightMode")">
-    test dark mode
-</body>
-<div class="darkMode"> test dark mode (manually set to class)</div>
-
-<title>Documentation API</title>
-<h1>Documentation</h1>
-<body class="@(darkMode?"darkMode":"lightMode")">
-</body>
-
+<div class="@(darkMode?"darkMode":"lightMode")">Dark Mode Test</div>
 
 <div style="align-items:flex-start">
     <div><p>@_currentDoc</p><p>test</p></div>
-    <button @onclick="()=>DarkModeToggle()">DARK MODE TOGGLE</button>
     <div class="noPadFlex" style="display:inline">
         <ul style="flex:auto; grid-auto-rows:auto">
             <li class="documentationList" style="margin:0px;flex:auto; align-content:space-between">
@@ -39,7 +29,7 @@
     public bool darkMode { get; set; }
     private string _currentDoc = "";
     private List<string> _documentationText = new List<string>()
-{
+    {
         "The following documentation ...",
         "Is generated ...",
         "By time "
@@ -50,9 +40,5 @@
     private void ChangeDocumentation(string newText, ref string element)
     {
         element = newText;
-    }
-    private void DarkModeToggle()
-    {
-        darkMode = !darkMode;
     }
 }

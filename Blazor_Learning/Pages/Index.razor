@@ -1,32 +1,36 @@
 ﻿@page "/"
-@page "/{DarkMode:bool}"
+@page "/{darkMode:bool}"
 
 <h1>Hello, world!</h1>
 
+<body class="@(darkMode?"darkMode":"lightMode")">
+    test dark mode
+</body>
+<div class="darkMode"> test dark mode (manually set to class)</div>
 <div class="alert alert-warning" role="alert">
     Before authentication will function correctly, you must configure your provider details in <code>Program.cs</code>
 </div>
 <div>
-@currentToolTip
-    </div>
+    @currentToolTip
+</div>
 
 <button class="tooltipButton" @onclick="() => IterateAndAssign<string>(toolTips, ref currentToolTip, ref toolTipIndex)">Next</button>
 
 
-<div class="toolTipButton" style="background-color:aquamarine";>
+<div class="toolTipButton" style="background-color:aquamarine" ;>
     Test Div
 </div>
 
 <SurveyPrompt Title="How is Blazor working for you?" />
 
-@code{ 
+@code{
     private bool IS_DEBUGGING = true;
     private static Version languageVer = new Version("5.0");
     [Parameter]
-    public bool DarkMode { get; set; }
+    public bool darkMode { get; set; }
 
     private List<string> toolTips = new List<string>()
-    {
+{
         "Use the search bar to find specific terms or keywords.",
         "This documentation is reflects the " + languageVer.ToString() + " version.",
         "ToolTips are fun."
@@ -36,7 +40,7 @@
 
 
     /// <summary>
-    /// Iterates through the given List&lt;T&gt; and assigns the value at 
+    /// Iterates through the given List&lt;T&gt; and assigns the value at
     /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -51,21 +55,21 @@
             if (iterator > list.Count - 1) { iterator = 0; }
             element = list[iterator];
         }
-        else if(IS_DEBUGGING)
+        else if (IS_DEBUGGING)
         {
             Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
         }
     }
 
     /// <summary>
-    /// Iterates through the given T[] and assigns the value at 
+    /// Iterates through the given T[] and assigns the value at
     /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="list">T[] to iterate over.</param>
     /// <param name="element">Thing being assigned to.</param>
     /// <param name="iterator">Holds index for iterating.</param>
-    /// 
+    ///
     private void IterateAndAssign<T>(T[] list, ref T element, ref int iterator)
     {
         if (list != null)
@@ -74,7 +78,7 @@
             if (iterator > list.Length - 1) { iterator = 0; }
             element = list[iterator];
         }
-        else if(IS_DEBUGGING)
+        else if (IS_DEBUGGING)
         {
             Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
         }

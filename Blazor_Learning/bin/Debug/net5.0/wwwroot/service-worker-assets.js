@@ -5,7 +5,7 @@
       "url": "_content\/Microsoft.AspNetCore.Components.WebAssembly.Authentication\/AuthenticationService.js"
     },
     {
-      "hash": "sha256-5N1vzNNT3pEnkbFUqpHCgYbOO5q0YLehH7rURZsYQlk=",
+      "hash": "sha256-hIWOvEKDAoUnO5i5A7kAaHrCM3hGPWo8tbN7OIuRRpY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -797,11 +797,11 @@
       "url": "_framework\/dotnet.5.0.17.js"
     },
     {
-      "hash": "sha256-pN9FLnaFcBqGMxu97Lrzy6Zh\/7NpWf+bavFYH91SkOc=",
+      "hash": "sha256-jBfiHM2p690bt7IskyJbH\/rrZVCHvNWXolslIbIlX4w=",
       "url": "_framework\/Blazor_Learning.dll"
     },
     {
-      "hash": "sha256-IP+uA9HEfFN5QSWjbE4lmvOdVPXBnMW6Uy1sJs8vsXU=",
+      "hash": "sha256-Pp1kdkdnXX7GX7coY979+Nq3PT\/KBee0btHV++DjPnM=",
       "url": "_framework\/Blazor_Learning.pdb"
     },
     {
@@ -1685,5 +1685,5 @@
       "url": "Blazor_Learning.bundle.scp.css"
     }
   ],
-  "version": "7fCT8jl6"
+  "version": "ACMG0ANg"
 };

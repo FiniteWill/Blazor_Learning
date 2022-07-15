@@ -1,7 +1,7 @@
 ﻿@page "/counter"
-@page "/counter/{DarkMode:bool}"
+@page "/counter/{darkMode:bool}"
 
-<body class="@(DarkMode?"darkMode":"lightMode")">
+<body class="@(darkMode?"darkMode":"lightMode")">
     test dark mode
 </body>
 <div class="darkMode"> test dark mode (manually set to class)</div>
@@ -10,13 +10,13 @@
 <div class="darkMode"></div>
 <p>Current count: @currentCount</p>
 
-<button class="btn btn-primary @DarkMode?"darkMode":"lightMode")" @onclick="IncrementCount">Click me</button>
+<button class="btn btn-primary @(darkMode?"darkMode":"lightMode")" @onclick="IncrementCount">Click me</button>
 
 @code {
     private int currentCount = 0;
 
     [Parameter]
-    public bool DarkMode { get; set; }
+    public bool darkMode { get; set; }
 
     private void IncrementCount()
     {

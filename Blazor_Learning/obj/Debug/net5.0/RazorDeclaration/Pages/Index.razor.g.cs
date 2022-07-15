@@ -90,7 +90,7 @@ using Blazor_Learning.Shared;
 #line hidden
 #nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    [Microsoft.AspNetCore.Components.RouteAttribute("/{DarkMode:bool}")]
+    [Microsoft.AspNetCore.Components.RouteAttribute("/{darkMode:bool}")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -99,15 +99,15 @@ using Blazor_Learning.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 22 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Index.razor"
-       
+#line 26 "C:\Users\DuffeyAaron\OneDrive - University of Wisconsin-Stout\Desktop\Github_Repos\Blazor\Blazor_Learning\Pages\Index.razor"
+      
     private bool IS_DEBUGGING = true;
     private static Version languageVer = new Version("5.0");
     [Parameter]
-    public bool DarkMode { get; set; }
+    public bool darkMode { get; set; }
 
     private List<string> toolTips = new List<string>()
-    {
+{
         "Use the search bar to find specific terms or keywords.",
         "This documentation is reflects the " + languageVer.ToString() + " version.",
         "ToolTips are fun."
@@ -117,7 +117,7 @@ using Blazor_Learning.Shared;
 
 
     /// <summary>
-    /// Iterates through the given List&lt;T&gt; and assigns the value at 
+    /// Iterates through the given List&lt;T&gt; and assigns the value at
     /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
@@ -132,21 +132,21 @@ using Blazor_Learning.Shared;
             if (iterator > list.Count - 1) { iterator = 0; }
             element = list[iterator];
         }
-        else if(IS_DEBUGGING)
+        else if (IS_DEBUGGING)
         {
             Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
         }
     }
 
     /// <summary>
-    /// Iterates through the given T[] and assigns the value at 
+    /// Iterates through the given T[] and assigns the value at
     /// <paramref name="iterator"/>'s position to <paramref name="element"/>.
     /// </summary>
     /// <typeparam name="T"></typeparam>
     /// <param name="list">T[] to iterate over.</param>
     /// <param name="element">Thing being assigned to.</param>
     /// <param name="iterator">Holds index for iterating.</param>
-    /// 
+    ///
     private void IterateAndAssign<T>(T[] list, ref T element, ref int iterator)
     {
         if (list != null)
@@ -155,7 +155,7 @@ using Blazor_Learning.Shared;
             if (iterator > list.Length - 1) { iterator = 0; }
             element = list[iterator];
         }
-        else if(IS_DEBUGGING)
+        else if (IS_DEBUGGING)
         {
             Console.WriteLine($"{list} is null. Cannot iterate and assign using it.");
         }
