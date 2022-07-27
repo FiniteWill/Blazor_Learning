@@ -1,17 +1,17 @@
 ﻿@inject NavigationManager UriHelper
-<div class="top-row pl-4 navbar navbar-dark">
+<div class="top-row pl-4 navbar navbar-dark @(darkMode?"darkMode":"lightMode")">
     <a class="navbar-brand" href="/@darkMode">Blazor_Learning</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
     </button>
 </div>
 
-<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+<div class="@NavMenuCssClass @(darkMode?"darkMode":"lightMode")" @onclick="ToggleNavMenu">
     <div>
         <button @onclick="ToggleDarkMode">Dark Mode</button>
     </div>
     <ul class="nav flex-column">
-        <li class="nav-item px-3"> 
+        <li class="nav-item px-3">
             <NavLink class="nav-link" href='@("/"+darkMode)' Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Home
             </NavLink>
@@ -35,6 +35,9 @@
 </div>
 
 @code {
+    [CascadingParameter]
+    public MainLayout Layout { get; set; }
+
     // List of the base strings for each razor page
     private string[] uriBases = new string[]
     {
@@ -42,7 +45,7 @@
         "counter/",
         "fetchdata/",
         "documentation/"
-    };
+        };
 
     private bool collapseNavMenu = true;
     private bool darkMode = false;
@@ -64,9 +67,16 @@
         darkMode = !darkMode;
 
         string curUri = UriHelper.Uri;
-        foreach(string s in uriBases)
+        foreach (string s in uriBases)
         {
             if (curUri.Contains(s)) { UriHelper.NavigateTo(s + darkMode.ToString()); }
         }
+        Layout.ToggleDarkMode();
+    }
+
+    protected override void OnInitialized()
+    {
+        ToggleDarkMode();
+        ToggleNavMenu();
     }
 }

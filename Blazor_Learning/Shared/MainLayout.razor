@@ -1,18 +1,27 @@
 ﻿@inherits LayoutComponentBase
-
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <div class="main">
-        <div class="top-row px-4 auth">
-            <LoginDisplay />
-            <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+<CascadingValue Value="this">
+    <div class="page @(darkMode?"darkMode":"lightMode")">
+        <div class="sidebar">
+            <NavMenu />
         </div>
 
-        <div class="content px-4">
-            @Body
+        <div class="main">
+            <div class="top-row px-4 auth">
+                <LoginDisplay />
+                <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
+            </div>
+
+            <div class="content px-4">
+                @Body
+            </div>
         </div>
     </div>
-</div>
+</CascadingValue>
+@code
+{
+
+    [Parameter] public bool darkMode { get; set; }
+
+    public void ToggleDarkMode() { darkMode = !darkMode; }
+
+}
